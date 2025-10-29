@@ -9,142 +9,142 @@
 #include <locale>
 #include <cstdlib>
 
-// Функция для ввода числа с проверкой
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РІРІРѕРґР° С‡РёСЃР»Р° СЃ РїСЂРѕРІРµСЂРєРѕР№
 int inputNumber(const std::string& prompt) {
     int value = 0;
     std::cout << prompt;
     while (!(std::cin >> value)) {
-        std::cout << "Ошибка! Введите целое число: ";
+        std::cout << "РћС€РёР±РєР°! Р’РІРµРґРёС‚Рµ С†РµР»РѕРµ С‡РёСЃР»Рѕ: ";
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }
     return value;
 }
 
-// Задание 1
+// Р—Р°РґР°РЅРёРµ 1
 void task1() {
-    std::cout << "\n=== ЗАДАНИЕ 1 ===" << std::endl;
+    std::cout << "\n=== Р—РђР”РђРќРР• 1 ===" << std::endl;
     
     std::vector<int> V;
     std::deque<int> D;
     std::list<int> L;
     
-    // Ввод вектора
-    std::cout << "Для вектора V:" << std::endl;
+    // Р’РІРѕРґ РІРµРєС‚РѕСЂР°
+    std::cout << "Р”Р»СЏ РІРµРєС‚РѕСЂР° V:" << std::endl;
     int n = 0;
     do {
-        n = inputNumber("Введите количество элементов (четное, >= 2): ");
+        n = inputNumber("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ (С‡РµС‚РЅРѕРµ, >= 2): ");
     } while (n < 2 || n % 2 != 0);
     
     for (int i = 0; i < n; i++) {
-        V.push_back(inputNumber("Введите число: "));
+        V.push_back(inputNumber("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ: "));
     }
     
-    // Ввод дека
-    std::cout << "\nДля дека D:" << std::endl;
+    // Р’РІРѕРґ РґРµРєР°
+    std::cout << "\nР”Р»СЏ РґРµРєР° D:" << std::endl;
     do {
-        n = inputNumber("Введите количество элементов (четное, >= 2): ");
+        n = inputNumber("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ (С‡РµС‚РЅРѕРµ, >= 2): ");
     } while (n < 2 || n % 2 != 0);
     
     for (int i = 0; i < n; i++) {
-        D.push_back(inputNumber("Введите число: "));
+        D.push_back(inputNumber("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ: "));
     }
     
-    // Ввод списка
-    std::cout << "\nДля списка L:" << std::endl;
+    // Р’РІРѕРґ СЃРїРёСЃРєР°
+    std::cout << "\nР”Р»СЏ СЃРїРёСЃРєР° L:" << std::endl;
     do {
-        n = inputNumber("Введите количество элементов (четное, >= 2): ");
+        n = inputNumber("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ (С‡РµС‚РЅРѕРµ, >= 2): ");
     } while (n < 2 || n % 2 != 0);
     
     for (int i = 0; i < n; i++) {
-        L.push_back(inputNumber("Введите число: "));
+        L.push_back(inputNumber("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ: "));
     }
     
-    // Обмен средних элементов в векторе
+    // РћР±РјРµРЅ СЃСЂРµРґРЅРёС… СЌР»РµРјРµРЅС‚РѕРІ РІ РІРµРєС‚РѕСЂРµ
     auto v1 = V.begin();
     std::advance(v1, V.size() / 2 - 1);
     auto v2 = V.begin();
     std::advance(v2, V.size() / 2);
     std::swap(*v1, *v2);
     
-    // Обмен средних элементов в деке
+    // РћР±РјРµРЅ СЃСЂРµРґРЅРёС… СЌР»РµРјРµРЅС‚РѕРІ РІ РґРµРєРµ
     auto d1 = D.begin();
     std::advance(d1, D.size() / 2 - 1);
     auto d2 = D.begin();
     std::advance(d2, D.size() / 2);
     std::swap(*d1, *d2);
     
-    // Обмен средних элементов в списке
+    // РћР±РјРµРЅ СЃСЂРµРґРЅРёС… СЌР»РµРјРµРЅС‚РѕРІ РІ СЃРїРёСЃРєРµ
     auto l1 = L.begin();
     std::advance(l1, L.size() / 2 - 1);
     auto l2 = L.begin();
     std::advance(l2, L.size() / 2);
     std::swap(*l1, *l2);
     
-    // Вывод результатов
-    std::cout << "\nРезультаты:" << std::endl;
+    // Р’С‹РІРѕРґ СЂРµР·СѓР»СЊС‚Р°С‚РѕРІ
+    std::cout << "\nР РµР·СѓР»СЊС‚Р°С‚С‹:" << std::endl;
     
-    std::cout << "Вектор V: ";
+    std::cout << "Р’РµРєС‚РѕСЂ V: ";
     for (auto it = V.begin(); it != V.end(); it++) {
         std::cout << *it << " ";
     }
     std::cout << std::endl;
     
-    std::cout << "Дек D: ";
+    std::cout << "Р”РµРє D: ";
     for (auto it = D.begin(); it != D.end(); it++) {
         std::cout << *it << " ";
     }
     std::cout << std::endl;
     
-    std::cout << "Список L: ";
+    std::cout << "РЎРїРёСЃРѕРє L: ";
     for (auto it = L.begin(); it != L.end(); it++) {
         std::cout << *it << " ";
     }
     std::cout << std::endl;
 }
 
-// Задание 2
+// Р—Р°РґР°РЅРёРµ 2
 void task2() {
-    std::cout << "\n=== ЗАДАНИЕ 2 ===" << std::endl;
+    std::cout << "\n=== Р—РђР”РђРќРР• 2 ===" << std::endl;
     
     std::deque<int> D;
     
     int n = 0;
     do {
-        n = inputNumber("Введите количество элементов для дека (нечетное, >= 5): ");
+        n = inputNumber("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ РґР»СЏ РґРµРєР° (РЅРµС‡РµС‚РЅРѕРµ, >= 5): ");
     } while (n < 5 || n % 2 == 0);
     
     for (int i = 0; i < n; i++) {
-        D.push_back(inputNumber("Введите число: "));
+        D.push_back(inputNumber("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ: "));
     }
     
-    // Находим 5 средних элементов
+    // РќР°С…РѕРґРёРј 5 СЃСЂРµРґРЅРёС… СЌР»РµРјРµРЅС‚РѕРІ
     int start = n / 2 - 2;
     int end = n / 2 + 3;
     
-    // Добавляем в начало
+    // Р”РѕР±Р°РІР»СЏРµРј РІ РЅР°С‡Р°Р»Рѕ
     D.insert(D.begin(), D.begin() + start, D.begin() + end);
     
-    std::cout << "Результат: ";
+    std::cout << "Р РµР·СѓР»СЊС‚Р°С‚: ";
     for (auto it = D.begin(); it != D.end(); it++) {
         std::cout << *it << " ";
     }
     std::cout << std::endl;
 }
 
-// Задание 3
+// Р—Р°РґР°РЅРёРµ 3
 void task3() {
-    std::cout << "\n=== ЗАДАНИЕ 3 ===" << std::endl;
+    std::cout << "\n=== Р—РђР”РђРќРР• 3 ===" << std::endl;
     
     std::list<int> L;
     
     int n = 0;
     do {
-        n = inputNumber("Введите количество элементов для списка (четное): ");
+        n = inputNumber("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ РґР»СЏ СЃРїРёСЃРєР° (С‡РµС‚РЅРѕРµ): ");
     } while (n % 2 != 0);
     
     for (int i = 0; i < n; i++) {
-        L.push_back(inputNumber("Введите число: "));
+        L.push_back(inputNumber("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ: "));
     }
     
     auto i = L.begin();
@@ -157,28 +157,28 @@ void task3() {
         r--;
     }
     
-    std::cout << "Результат: ";
+    std::cout << "Р РµР·СѓР»СЊС‚Р°С‚: ";
     for (auto it = L.begin(); it != L.end(); it++) {
         std::cout << *it << " ";
     }
     std::cout << std::endl;
 }
 
-// Задание 4
+// Р—Р°РґР°РЅРёРµ 4
 void task4() {
-    std::cout << "\n=== ЗАДАНИЕ 4 ===" << std::endl;
+    std::cout << "\n=== Р—РђР”РђРќРР• 4 ===" << std::endl;
     
     std::string filename;
-    std::cout << "Введите имя файла: ";
+    std::cout << "Р’РІРµРґРёС‚Рµ РёРјСЏ С„Р°Р№Р»Р°: ";
     std::cin >> filename;
     
     std::ifstream file(filename);
     if (!file) {
-        std::cout << "Ошибка открытия файла!" << std::endl;
+        std::cout << "РћС€РёР±РєР° РѕС‚РєСЂС‹С‚РёСЏ С„Р°Р№Р»Р°!" << std::endl;
         return;
     }
     
-    std::cout << "Числа с нечетными номерами: ";
+    std::cout << "Р§РёСЃР»Р° СЃ РЅРµС‡РµС‚РЅС‹РјРё РЅРѕРјРµСЂР°РјРё: ";
     
     int counter = 0;
     int number = 0;
@@ -193,18 +193,18 @@ void task4() {
     file.close();
 }
 
-// Задание 5
+// Р—Р°РґР°РЅРёРµ 5
 void task5() {
-    std::cout << "\n=== ЗАДАНИЕ 5 ===" << std::endl;
+    std::cout << "\n=== Р—РђР”РђРќРР• 5 ===" << std::endl;
     
     std::vector<int> V;
-    int n = inputNumber("Введите количество элементов для вектора: ");
+    int n = inputNumber("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ РґР»СЏ РІРµРєС‚РѕСЂР°: ");
     
     for (int i = 0; i < n; i++) {
-        V.push_back(inputNumber("Введите число: "));
+        V.push_back(inputNumber("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ: "));
     }
     
-    // Ищем нулевые элементы
+    // РС‰РµРј РЅСѓР»РµРІС‹Рµ СЌР»РµРјРµРЅС‚С‹
     int zeroCount = 0;
     int secondZeroIndex = -1;
     
@@ -220,66 +220,66 @@ void task5() {
     
     if (secondZeroIndex != -1) {
         V.erase(V.begin() + secondZeroIndex);
-        std::cout << "Второй нулевой элемент удален" << std::endl;
+        std::cout << "Р’С‚РѕСЂРѕР№ РЅСѓР»РµРІРѕР№ СЌР»РµРјРµРЅС‚ СѓРґР°Р»РµРЅ" << std::endl;
     } else {
-        std::cout << "Второй нулевой элемент не найден" << std::endl;
+        std::cout << "Р’С‚РѕСЂРѕР№ РЅСѓР»РµРІРѕР№ СЌР»РµРјРµРЅС‚ РЅРµ РЅР°Р№РґРµРЅ" << std::endl;
     }
     
-    std::cout << "Результат: ";
+    std::cout << "Р РµР·СѓР»СЊС‚Р°С‚: ";
     for (int num : V) {
         std::cout << num << " ";
     }
     std::cout << std::endl;
 }
 
-// Задание 6
+// Р—Р°РґР°РЅРёРµ 6
 void task6() {
-    std::cout << "\n=== ЗАДАНИЕ 6 ===" << std::endl;
+    std::cout << "\n=== Р—РђР”РђРќРР• 6 ===" << std::endl;
     
     std::vector<int> V;
     
     int n = 0;
     do {
-        n = inputNumber("Введите количество элементов для вектора (четное): ");
+        n = inputNumber("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ РґР»СЏ РІРµРєС‚РѕСЂР° (С‡РµС‚РЅРѕРµ): ");
     } while (n % 2 != 0);
     
     for (int i = 0; i < n; i++) {
-        V.push_back(inputNumber("Введите число: "));
+        V.push_back(inputNumber("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ: "));
     }
     
-    // Первая половина - заменяем отрицательные на -1
+    // РџРµСЂРІР°СЏ РїРѕР»РѕРІРёРЅР° - Р·Р°РјРµРЅСЏРµРј РѕС‚СЂРёС†Р°С‚РµР»СЊРЅС‹Рµ РЅР° -1
     for (int i = 0; i < n / 2; i++) {
         if (V[i] < 0) {
             V[i] = -1;
         }
     }
     
-    // Вторая половина - заменяем положительные на 1
+    // Р’С‚РѕСЂР°СЏ РїРѕР»РѕРІРёРЅР° - Р·Р°РјРµРЅСЏРµРј РїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹Рµ РЅР° 1
     for (int i = n / 2; i < n; i++) {
         if (V[i] > 0) {
             V[i] = 1;
         }
     }
     
-    std::cout << "Результат: ";
+    std::cout << "Р РµР·СѓР»СЊС‚Р°С‚: ";
     for (int num : V) {
         std::cout << num << " ";
     }
     std::cout << std::endl;
 }
 
-// Задание 7
+// Р—Р°РґР°РЅРёРµ 7
 void task7() {
-    std::cout << "\n=== ЗАДАНИЕ 7 ===" << std::endl;
+    std::cout << "\n=== Р—РђР”РђРќРР• 7 ===" << std::endl;
     
     std::list<int> L;
-    int n = inputNumber("Введите количество элементов для списка: ");
+    int n = inputNumber("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ РґР»СЏ СЃРїРёСЃРєР°: ");
     
     for (int i = 0; i < n; i++) {
-        L.push_back(inputNumber("Введите число: "));
+        L.push_back(inputNumber("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ: "));
     }
     
-    // Создаем три списка для разных типов чисел
+    // РЎРѕР·РґР°РµРј С‚СЂРё СЃРїРёСЃРєР° РґР»СЏ СЂР°Р·РЅС‹С… С‚РёРїРѕРІ С‡РёСЃРµР»
     std::list<int> negative, zero, positive;
     
     for (int num : L) {
@@ -292,33 +292,33 @@ void task7() {
         }
     }
     
-    // Объединяем списки
+    // РћР±СЉРµРґРёРЅСЏРµРј СЃРїРёСЃРєРё
     L.clear();
     L.splice(L.end(), negative);
     L.splice(L.end(), zero);
     L.splice(L.end(), positive);
     
-    std::cout << "Результат: ";
+    std::cout << "Р РµР·СѓР»СЊС‚Р°С‚: ";
     for (int num : L) {
         std::cout << num << " ";
     }
     std::cout << std::endl;
 }
 
-// Задание 8
+// Р—Р°РґР°РЅРёРµ 8
 void task8() {
-    std::cout << "\n=== ЗАДАНИЕ 8 ===" << std::endl;
+    std::cout << "\n=== Р—РђР”РђРќРР• 8 ===" << std::endl;
     
     std::list<int> L;
-    int n = inputNumber("Введите количество элементов для списка: ");
+    int n = inputNumber("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ РґР»СЏ СЃРїРёСЃРєР°: ");
     
     for (int i = 0; i < n; i++) {
-        L.push_back(inputNumber("Введите число: "));
+        L.push_back(inputNumber("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ: "));
     }
     
     std::vector<double> V;
     
-    // Вычисляем средние арифметические соседних элементов
+    // Р’С‹С‡РёСЃР»СЏРµРј СЃСЂРµРґРЅРёРµ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРёРµ СЃРѕСЃРµРґРЅРёС… СЌР»РµРјРµРЅС‚РѕРІ
     auto it1 = L.begin();
     auto it2 = L.begin();
     it2++;
@@ -330,23 +330,23 @@ void task8() {
         it2++;
     }
     
-    std::cout << "Средние арифметические: ";
+    std::cout << "РЎСЂРµРґРЅРёРµ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРёРµ: ";
     for (double num : V) {
         std::cout << num << " ";
     }
     std::cout << std::endl;
 }
 
-// Главная функция
+// Р“Р»Р°РІРЅР°СЏ С„СѓРЅРєС†РёСЏ
 int main() {
     system("chcp 1251");
     setlocale(LC_ALL, "Russian");
     
-    std::cout << "ЛАБОРАТОРНАЯ РАБОТА ПО STL" << std::endl;
+    std::cout << "Р›РђР‘РћР РђРўРћР РќРђРЇ Р РђР‘РћРўРђ РџРћ STL" << std::endl;
     std::cout << "==========================" << std::endl;
     
     while (true) {
-        std::cout << "\nВыберите задание (1-8) или 0 для выхода: ";
+        std::cout << "\nР’С‹Р±РµСЂРёС‚Рµ Р·Р°РґР°РЅРёРµ (1-8) РёР»Рё 0 РґР»СЏ РІС‹С…РѕРґР°: ";
         int choice = 0;
         std::cin >> choice;
         
@@ -363,10 +363,10 @@ int main() {
             case 6: task6(); break;
             case 7: task7(); break;
             case 8: task8(); break;
-            default: std::cout << "Неверный выбор!" << std::endl;
+            default: std::cout << "РќРµРІРµСЂРЅС‹Р№ РІС‹Р±РѕСЂ!" << std::endl;
         }
     }
     
-    std::cout << "Программа завершена." << std::endl;
+    std::cout << "РџСЂРѕРіСЂР°РјРјР° Р·Р°РІРµСЂС€РµРЅР°." << std::endl;
     return 0;
 }
