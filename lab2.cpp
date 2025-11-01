@@ -152,9 +152,7 @@ void task3() {
     r--;
     
     for (int count = 0; count < n / 2; count++) {
-        L.splice(i, L, r);
-        i++;
-        r--;
+        L.splice(i++, L, r--);
     }
     
     std::cout << "Результат: ";
@@ -370,3 +368,4 @@ int main() {
     std::cout << "Программа завершена." << std::endl;
     return 0;
 }
+
