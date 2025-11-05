@@ -60,21 +60,21 @@ void task1() {
         L.push_back(inputNumber("Введите число: "));
     }
     
-    // Обмен средних элементов в векторе
+    // Обмен в векторе
     auto v1 = V.begin();
     std::advance(v1, V.size() / 2 - 1);
     auto v2 = V.begin();
     std::advance(v2, V.size() / 2);
     std::swap(*v1, *v2);
     
-    // Обмен средних элементов в деке
+    // Обмен в деке
     auto d1 = D.begin();
     std::advance(d1, D.size() / 2 - 1);
     auto d2 = D.begin();
     std::advance(d2, D.size() / 2);
     std::swap(*d1, *d2);
     
-    // Обмен средних элементов в списке
+    // Обмен в списке
     auto l1 = L.begin();
     std::advance(l1, L.size() / 2 - 1);
     auto l2 = L.begin();
@@ -118,7 +118,7 @@ void task2() {
         D.push_back(inputNumber("Введите число: "));
     }
     
-    // Находим 5 средних элементов
+    // 5 средних элементов
     int start = n / 2 - 2;
     int end = n / 2 + 3;
     
@@ -202,7 +202,7 @@ void task5() {
         V.push_back(inputNumber("Введите число: "));
     }
     
-    // Ищем нулевые элементы
+    // Нулевые элементы
     int zeroCount = 0;
     int secondZeroIndex = -1;
     
@@ -245,14 +245,14 @@ void task6() {
         V.push_back(inputNumber("Введите число: "));
     }
     
-    // Первая половина - заменяем отрицательные на -1
+    // Первая половина
     for (int i = 0; i < n / 2; i++) {
         if (V[i] < 0) {
             V[i] = -1;
         }
     }
     
-    // Вторая половина - заменяем положительные на 1
+    // Вторая половина
     for (int i = n / 2; i < n; i++) {
         if (V[i] > 0) {
             V[i] = 1;
@@ -277,8 +277,10 @@ void task7() {
         L.push_back(inputNumber("Введите число: "));
     }
     
-    // Создаем три списка для разных типов чисел
-    std::list<int> negative, zero, positive;
+    // Три списка для разных типов чисел
+    std::list<int> negative;
+    std::list<int> zero;
+    std::list<int> positive;
     
     for (int num : L) {
         if (num < 0) {
@@ -290,7 +292,7 @@ void task7() {
         }
     }
     
-    // Объединяем списки
+    // Объединение
     L.clear();
     L.splice(L.end(), negative);
     L.splice(L.end(), zero);
@@ -316,7 +318,7 @@ void task8() {
     
     std::vector<double> V;
     
-    // Вычисляем средние арифметические соседних элементов
+    // Средние арифметические соседних элементов
     auto it1 = L.begin();
     auto it2 = L.begin();
     it2++;
@@ -353,14 +355,22 @@ int main() {
         }
         
         switch (choice) {
-            case 1: task1(); break;
-            case 2: task2(); break;
-            case 3: task3(); break;
-            case 4: task4(); break;
-            case 5: task5(); break;
-            case 6: task6(); break;
-            case 7: task7(); break;
-            case 8: task8(); break;
+            case 1: task1(); 
+            break;
+            case 2: task2(); 
+            break;
+            case 3: task3(); 
+            break;
+            case 4: task4(); 
+            break;
+            case 5: task5(); 
+            break;
+            case 6: task6(); 
+            break;
+            case 7: task7(); 
+            break;
+            case 8: task8(); 
+            break;
             default: std::cout << "Неверный выбор!" << std::endl;
         }
     }
@@ -368,4 +378,3 @@ int main() {
     std::cout << "Программа завершена." << std::endl;
     return 0;
 }
-
