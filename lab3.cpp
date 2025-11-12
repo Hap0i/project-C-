@@ -5,7 +5,7 @@
 #include <locale>
 #include <cstdlib>
 
-// 1 Точка координат
+// 1 РўРѕС‡РєР° РєРѕРѕСЂРґРёРЅР°С‚
 class Point {
 public:
     Point() : x(0), y(0) {}
@@ -30,7 +30,7 @@ private:
     double y;
 };
 
-// 2 Прямая
+// 2 РџСЂСЏРјР°СЏ
 class Line {
 public:
     Line(Point start, Point end) : start(start), end(end) {}
@@ -43,7 +43,7 @@ public:
     void setEnd(Point newEnd) { end = newEnd; }
     
     std::string toString() const {
-        return "Линия от " + start.toString() + " до " + end.toString();
+        return "Р›РёРЅРёСЏ РѕС‚ " + start.toString() + " РґРѕ " + end.toString();
     }
     
     void print() const {
@@ -55,7 +55,7 @@ private:
     Point end;
 };
 
-// 3 Студент
+// 3 РЎС‚СѓРґРµРЅС‚
 class Student {
 public:
     Student(std::string name) : name(name) {}
@@ -90,10 +90,10 @@ private:
     std::vector<int> grades;
 };
 
-// 4.1 Точка (обновленная)
+// 4.1 РўРѕС‡РєР° (РѕР±РЅРѕРІР»РµРЅРЅР°СЏ)
 class Point41 {
 public:
-    // Конструктор с параметрами
+    // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
     Point41(double x, double y) : x(x), y(y) {}
     
     double getX() const { return x; }
@@ -112,7 +112,7 @@ private:
     double y;
 };
 
-// 4.2 Линия (обновленная)
+// 4.2 Р›РёРЅРёСЏ (РѕР±РЅРѕРІР»РµРЅРЅР°СЏ)
 class Line42 {
 public:
     Line42(Point41 start, Point41 end) : start(start), end(end) {}
@@ -122,7 +122,7 @@ public:
     Point41 getEnd() const { return end; }
     
     std::string toString() const {
-        return "Линия от " + start.toString() + " до " + end.toString();
+        return "Р›РёРЅРёСЏ РѕС‚ " + start.toString() + " РґРѕ " + end.toString();
     }
     
     void print() const {
@@ -134,7 +134,7 @@ private:
     Point41 end;
 };
 
-// 5 Линия с длиной
+// 5 Р›РёРЅРёСЏ СЃ РґР»РёРЅРѕР№
 class LineWithLength {
 public:
     LineWithLength(double x1, double y1, double x2, double y2) : x1(x1), y1(y1), x2(x2), y2(y2) {}
@@ -146,81 +146,81 @@ public:
     }
     
     void print() const {
-        std::cout << "Линия от {" << (int)x1 << ";" << (int)y1 << "} до {" 
-                  << (int)x2 << ";" << (int)y2 << "} | Длина: " << getLength() << std::endl;
+        std::cout << "Р›РёРЅРёСЏ РѕС‚ {" << (int)x1 << ";" << (int)y1 << "} РґРѕ {" 
+                  << (int)x2 << ";" << (int)y2 << "} | Р”Р»РёРЅР°: " << getLength() << std::endl;
     }
 
 private:
     double x1, y1, x2, y2;
 };
 
-// Функции для демонстрации заданий
+// Р¤СѓРЅРєС†РёРё РґР»СЏ РґРµРјРѕРЅСЃС‚СЂР°С†РёРё Р·Р°РґР°РЅРёР№
 void task1() {
-    std::cout << "=== ЗАДАНИЕ 1: Точка координат ===" << std::endl;
+    std::cout << "=== Р—РђР”РђРќРР• 1: РўРѕС‡РєР° РєРѕРѕСЂРґРёРЅР°С‚ ===" << std::endl;
     
     Point p1(1, 3);
     Point p2(5, 7);
     Point p3(2, 9);
     
-    std::cout << "Точка 1: "; p1.print();
-    std::cout << "Точка 2: "; p2.print();
-    std::cout << "Точка 3: "; p3.print();
+    std::cout << "РўРѕС‡РєР° 1: "; p1.print();
+    std::cout << "РўРѕС‡РєР° 2: "; p2.print();
+    std::cout << "РўРѕС‡РєР° 3: "; p3.print();
 }
 
 void task2() {
-    std::cout << "\n=== ЗАДАНИЕ 2: Прямая ===" << std::endl;
+    std::cout << "\n=== Р—РђР”РђРќРР• 2: РџСЂСЏРјР°СЏ ===" << std::endl;
     
-    // 1. Линия 1 
+    // 1. Р›РёРЅРёСЏ 1 
     Line line1(Point(1, 3), Point(23, 8));
     std::cout << "1. "; line1.print();
     
-    // 2. Линия 2
+    // 2. Р›РёРЅРёСЏ 2
     Line line2(Point(5, 10), Point(25, 10));
     std::cout << "2. "; line2.print();
     
-    // 3. Линия 3
+    // 3. Р›РёРЅРёСЏ 3
     Line line3(line1.getStart(), line2.getEnd());
     std::cout << "3. "; line3.print();
     
-    // 4. Изменение координат первой и второй линий
-    std::cout << "\n4. После изменения координат первой и второй линий:" << std::endl;
+    // 4. РР·РјРµРЅРµРЅРёРµ РєРѕРѕСЂРґРёРЅР°С‚ РїРµСЂРІРѕР№ Рё РІС‚РѕСЂРѕР№ Р»РёРЅРёР№
+    std::cout << "\n4. РџРѕСЃР»Рµ РёР·РјРµРЅРµРЅРёСЏ РєРѕРѕСЂРґРёРЅР°С‚ РїРµСЂРІРѕР№ Рё РІС‚РѕСЂРѕР№ Р»РёРЅРёР№:" << std::endl;
     line1.setStart(Point(2, 4));
     line1.setEnd(Point(24, 9));
     line2.setStart(Point(6, 11));
     line2.setEnd(Point(26, 11));
     
-    // Обновление линии 3
+    // РћР±РЅРѕРІР»РµРЅРёРµ Р»РёРЅРёРё 3
     line3.setStart(line1.getStart());
     line3.setEnd(line2.getEnd());
     
-    std::cout << "   Линия 1: "; line1.print();
-    std::cout << "   Линия 2: "; line2.print();
-    std::cout << "   Линия 3: "; line3.print();
+    std::cout << "   Р›РёРЅРёСЏ 1: "; line1.print();
+    std::cout << "   Р›РёРЅРёСЏ 2: "; line2.print();
+    std::cout << "   Р›РёРЅРёСЏ 3: "; line3.print();
     
-    // 5. Изменение координат первой линии без изменений на 3 линию 
-    std::cout << "\n5. Изменение линии 1 без влияния на линию 3:" << std::endl;
+    // 5. РР·РјРµРЅРµРЅРёРµ РєРѕРѕСЂРґРёРЅР°С‚ РїРµСЂРІРѕР№ Р»РёРЅРёРё Р±РµР· РёР·РјРµРЅРµРЅРёР№ РЅР° 3 Р»РёРЅРёСЋ 
+    std::cout << "\n5. РР·РјРµРЅРµРЅРёРµ Р»РёРЅРёРё 1 Р±РµР· РІР»РёСЏРЅРёСЏ РЅР° Р»РёРЅРёСЋ 3:" << std::endl;
     
-    // Сохраняем текущие координаты начала линии 1
+    // РЎРѕС…СЂР°РЅСЏРµРј С‚РµРєСѓС‰РёРµ РєРѕРѕСЂРґРёРЅР°С‚С‹ РЅР°С‡Р°Р»Р° Р»РёРЅРёРё 1
     Point originalStart = line1.getStart();
     
-    // Меняем начало линии 1
+    // РњРµРЅСЏРµРј РЅР°С‡Р°Р»Рѕ Р»РёРЅРёРё 1
     line1.setStart(Point(3, 5));
     line1.setEnd(Point(13, 8));
     
-    // Линия 3 остается с прежними координатами
-    std::cout << "   Линия 1: "; line1.print();
-    std::cout << "   Линия 3: "; line3.print();
+    // Р›РёРЅРёСЏ 3 РѕСЃС‚Р°РµС‚СЃСЏ СЃ РїСЂРµР¶РЅРёРјРё РєРѕРѕСЂРґРёРЅР°С‚Р°РјРё
+    std::cout << "   Р›РёРЅРёСЏ 1: "; line1.print();
+    std::cout << "   Р›РёРЅРёСЏ 3: "; line3.print();
 }
 
 void task3() {
-    std::cout << "\n=== ЗАДАНИЕ 3: Студент ===" << std::endl;
+    std::cout << "\n=== Р—РђР”РђРќРР• 3: РЎС‚СѓРґРµРЅС‚ ===" << std::endl;
     
-    Student vasya("Вася");
+    Student vasya("Р’Р°СЃСЏ");
     vasya.addGrade(3);
     vasya.addGrade(4);
     vasya.addGrade(5);
     
-    Student petya("Петя");
+    Student petya("РџРµС‚СЏ");
     petya.setGrades(vasya.getGrades());
     std::cout << ""; vasya.print();
     std::cout << ""; petya.print();
@@ -230,46 +230,46 @@ void task3() {
 }
 
 void task4() {
-    std::cout << "\n=== ЗАДАНИЕ 4: Обновленные точки и линии ===" << std::endl;
+    std::cout << "\n=== Р—РђР”РђРќРР• 4: РћР±РЅРѕРІР»РµРЅРЅС‹Рµ С‚РѕС‡РєРё Рё Р»РёРЅРёРё ===" << std::endl;
     
-    // Задание 4.1
+    // Р—Р°РґР°РЅРёРµ 4.1
     std::cout << "4.1:" << std::endl;
     Point41 p1(3, 5);
     Point41 p2(25, 6);
     Point41 p3(7, 8);
     
-    std::cout << "Точка 1: "; p1.print();
-    std::cout << "Точка 2: "; p2.print();
-    std::cout << "Точка 3: "; p3.print();
+    std::cout << "РўРѕС‡РєР° 1: "; p1.print();
+    std::cout << "РўРѕС‡РєР° 2: "; p2.print();
+    std::cout << "РўРѕС‡РєР° 3: "; p3.print();
     
-    // Задание 4.2
+    // Р—Р°РґР°РЅРёРµ 4.2
     std::cout << "\n4.2:" << std::endl;
     Line42 line1(Point41(1, 3), Point41(23, 8));
     Line42 line2(5, 10, 25, 10);
     Line42 line3(line1.getStart(), line2.getEnd());
     
-    std::cout << "Линия 1: "; line1.print();
-    std::cout << "Линия 2: "; line2.print();
-    std::cout << "Линия 3: "; line3.print();
+    std::cout << "Р›РёРЅРёСЏ 1: "; line1.print();
+    std::cout << "Р›РёРЅРёСЏ 2: "; line2.print();
+    std::cout << "Р›РёРЅРёСЏ 3: "; line3.print();
 }
 
 void task5() {
-    std::cout << "\n=== ЗАДАНИЕ 5: Длина линии ===" << std::endl;
+    std::cout << "\n=== Р—РђР”РђРќРР• 5: Р”Р»РёРЅР° Р»РёРЅРёРё ===" << std::endl;
     
     LineWithLength line(1, 1, 10, 15);
     line.print();
 }
 
 void showMenu() {
-    std::cout << "\n========== МЕНЮ ==========" << std::endl;
-    std::cout << "1. Задание 1 - Точка координат" << std::endl;
-    std::cout << "2. Задание 2 - Прямая" << std::endl;
-    std::cout << "3. Задание 3 - Студент" << std::endl;
-    std::cout << "4. Задание 4 - Обновленные точки и линии" << std::endl;
-    std::cout << "5. Задание 5 - Длина линии" << std::endl;
-    std::cout << "0. Выход" << std::endl;
+    std::cout << "\n========== РњР•РќР® ==========" << std::endl;
+    std::cout << "1. Р—Р°РґР°РЅРёРµ 1 - РўРѕС‡РєР° РєРѕРѕСЂРґРёРЅР°С‚" << std::endl;
+    std::cout << "2. Р—Р°РґР°РЅРёРµ 2 - РџСЂСЏРјР°СЏ" << std::endl;
+    std::cout << "3. Р—Р°РґР°РЅРёРµ 3 - РЎС‚СѓРґРµРЅС‚" << std::endl;
+    std::cout << "4. Р—Р°РґР°РЅРёРµ 4 - РћР±РЅРѕРІР»РµРЅРЅС‹Рµ С‚РѕС‡РєРё Рё Р»РёРЅРёРё" << std::endl;
+    std::cout << "5. Р—Р°РґР°РЅРёРµ 5 - Р”Р»РёРЅР° Р»РёРЅРёРё" << std::endl;
+    std::cout << "0. Р’С‹С…РѕРґ" << std::endl;
     std::cout << "==========================" << std::endl;
-    std::cout << "Выберите задание: ";
+    std::cout << "Р’С‹Р±РµСЂРёС‚Рµ Р·Р°РґР°РЅРёРµ: ";
 }
 
 int main() {
@@ -296,10 +296,10 @@ int main() {
                 task5();
                 break;
             case 0:
-                std::cout << "Выход из программы." << std::endl;
+                std::cout << "Р’С‹С…РѕРґ РёР· РїСЂРѕРіСЂР°РјРјС‹." << std::endl;
                 break;
             default:
-                std::cout << "Неверный выбор! Попробуйте снова." << std::endl;
+                std::cout << "РќРµРІРµСЂРЅС‹Р№ РІС‹Р±РѕСЂ! РџРѕРїСЂРѕР±СѓР№С‚Рµ СЃРЅРѕРІР°." << std::endl;
         }
     } while (choice != 0);
     return 0;
