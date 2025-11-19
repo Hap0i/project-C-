@@ -14,12 +14,12 @@ private:
     }
 
 public:
-    // Конструкторы
+    // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹
     Time() : hours(0), minutes(0) {}
     Time(unsigned char h, unsigned char m) : hours(h), minutes(m) { normalize(); }
     Time(const Time& other) : hours(other.hours), minutes(other.minutes) {}
 
-    // Метод из задания 1
+    // РњРµС‚РѕРґ РёР· Р·Р°РґР°РЅРёСЏ 1
     Time addMinutes(unsigned int min) const {
         Time result = *this;
         result.minutes += min;
@@ -27,7 +27,7 @@ public:
         return result;
     }
 
-    // Перегрузка вывода
+    // РџРµСЂРµРіСЂСѓР·РєР° РІС‹РІРѕРґР°
     friend std::ostream& operator<<(std::ostream& os, const Time& t) {
         if (t.hours < 10) os << "0";
         os << (int)t.hours << ":";
@@ -36,7 +36,7 @@ public:
         return os;
     }
 
-    // Унарные операции (задание 2)
+    // РЈРЅР°СЂРЅС‹Рµ РѕРїРµСЂР°С†РёРё (Р·Р°РґР°РЅРёРµ 2)
     Time& operator++() {
         ++minutes;
         normalize();
@@ -65,11 +65,11 @@ public:
         return temp;
     }
 
-    // Приведение типа (задание 2)
+    // РџСЂРёРІРµРґРµРЅРёРµ С‚РёРїР° (Р·Р°РґР°РЅРёРµ 2)
     explicit operator short() const { return hours; }
     operator bool() const { return hours != 0 || minutes != 0; }
 
-    // Бинарные операции (задание 2)
+    // Р‘РёРЅР°СЂРЅС‹Рµ РѕРїРµСЂР°С†РёРё (Р·Р°РґР°РЅРёРµ 2)
     friend Time operator+(const Time& t, unsigned int min) {
         return t.addMinutes(min);
     }
@@ -84,9 +84,9 @@ public:
 Time inputTime() {
     int h = 0;
     int m = 0;
-    std::cout << "Часы (0-23): ";
+    std::cout << "Р§Р°СЃС‹ (0-23): ";
     std::cin >> h;
-    std::cout << "Минуты (0-59): ";
+    std::cout << "РњРёРЅСѓС‚С‹ (0-59): ";
     std::cin >> m;
     return Time(h, m);
 }
@@ -95,38 +95,38 @@ int main() {
     system("chcp 1251");
     setlocale(LC_ALL, "Russian");
     
-    // Тест конструкторов
-    std::cout << "1. Конструкторы:\n";
+    // РўРµСЃС‚ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂРѕРІ
+    std::cout << "1. РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹:\n";
     Time t1 = inputTime();
     Time t2;
     Time t3 = t1;
     std::cout << "t1: " << t1 << "\nt2: " << t2 << "\nt3: " << t3 << "\n\n";
 
-    // Тест метода addMinutes
-    std::cout << "2. Метод addMinutes:\n";
+    // РўРµСЃС‚ РјРµС‚РѕРґР° addMinutes
+    std::cout << "2. РњРµС‚РѕРґ addMinutes:\n";
     unsigned int min;
-    std::cout << "Минуты для добавления: ";
+    std::cout << "РњРёРЅСѓС‚С‹ РґР»СЏ РґРѕР±Р°РІР»РµРЅРёСЏ: ";
     std::cin >> min;
-    std::cout << t1 << " + " << min << " мин = " << t1.addMinutes(min) << "\n\n";
+    std::cout << t1 << " + " << min << " РјРёРЅ = " << t1.addMinutes(min) << "\n\n";
 
-    // Тест унарных операций
-    std::cout << "3. Унарные операции:\n";
+    // РўРµСЃС‚ СѓРЅР°СЂРЅС‹С… РѕРїРµСЂР°С†РёР№
+    std::cout << "3. РЈРЅР°СЂРЅС‹Рµ РѕРїРµСЂР°С†РёРё:\n";
     Time t4 = t1;
-    std::cout << "Исходное: " << t4 << "\n";
+    std::cout << "РСЃС…РѕРґРЅРѕРµ: " << t4 << "\n";
     std::cout << "++t: " << ++t4 << "\n";
-    std::cout << "t++: " << t4++ << " (после: " << t4 << ")\n";
+    std::cout << "t++: " << t4++ << " (РїРѕСЃР»Рµ: " << t4 << ")\n";
     std::cout << "--t: " << --t1 << "\n";
-    std::cout << "t--: " << t1-- << " (после: " << t1 << ")\n\n";
+    std::cout << "t--: " << t1-- << " (РїРѕСЃР»Рµ: " << t1 << ")\n\n";
 
-    // Тест приведения типа
-    std::cout << "4. Приведение типа:\n";
+    // РўРµСЃС‚ РїСЂРёРІРµРґРµРЅРёСЏ С‚РёРїР°
+    std::cout << "4. РџСЂРёРІРµРґРµРЅРёРµ С‚РёРїР°:\n";
     std::cout << "short(t1): " << (short)t1 << "\n";
     std::cout << "bool(t1): " << (t1 ? "true" : "false") << "\n";
     std::cout << "bool(00:00): " << (Time(0,0) ? "true" : "false") << "\n\n";
 
-    // Тест бинарных операций
-    std::cout << "5. Бинарные операции:\n";
-    std::cout << "Минуты для операций: ";
+    // РўРµСЃС‚ Р±РёРЅР°СЂРЅС‹С… РѕРїРµСЂР°С†РёР№
+    std::cout << "5. Р‘РёРЅР°СЂРЅС‹Рµ РѕРїРµСЂР°С†РёРё:\n";
+    std::cout << "РњРёРЅСѓС‚С‹ РґР»СЏ РѕРїРµСЂР°С†РёР№: ";
     std::cin >> min;
     std::cout << t1 << " + " << min << " = " << t1 + min << "\n";
     std::cout << t1 << " - " << min << " = " << t1 - min << "\n";
