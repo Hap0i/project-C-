@@ -7,13 +7,12 @@
 
 class FileTasks {
 public:
-    // Структура для задания 3
+    // РЎС‚СЂСѓРєС‚СѓСЂР° РґР»СЏ Р·Р°РґР°РЅРёСЏ 3
     struct Baggage {
         char name[20];
-        double weight;
+        double weight = 0;
     };
 
-    // Объявления методов
     static void zadanie1();
     static void zadanie2();
     static void zadanie3();
