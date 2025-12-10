@@ -13,7 +13,6 @@
 void FileTasks::zadanie1() {
     std::cout << "=== ЗАДАНИЕ 1 ===" << std::endl;
     
-    // Бинарный файл 
     std::ofstream source_file("task1(1).bin", std::ios::binary);
     int numbers[10];
     
@@ -42,7 +41,6 @@ void FileTasks::zadanie1() {
     read_file.close();
     even_file.close();
     
-    // Выводим результат
     std::cout << "Четные числа: ";
     for (int n : even_numbers) {
         std::cout << n << " ";
@@ -99,7 +97,8 @@ void FileTasks::zadanie2() {
     
     // Меняем min и max
     for (int i = 0; i < 3; i++) {
-        int min_idx = 0, max_idx = 0;
+        int min_idx = 0;
+        int max_idx = 0;
         for (int j = 1; j < 3; j++) {
             if (matrix[i][j] < matrix[i][min_idx]) min_idx = j;
             if (matrix[i][j] > matrix[i][max_idx]) max_idx = j;
