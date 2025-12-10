@@ -9,15 +9,15 @@
 #include <cstdlib>
 #include <cmath>
 
-// Задание 1
+// Р—Р°РґР°РЅРёРµ 1
 void FileTasks::zadanie1() {
-    std::cout << "=== ЗАДАНИЕ 1 ===" << std::endl;
+    std::cout << "=== Р—РђР”РђРќРР• 1 ===" << std::endl;
     
-    // Бинарный файл 
+    // Р‘РёРЅР°СЂРЅС‹Р№ С„Р°Р№Р» 
     std::ofstream source_file("task1(1).bin", std::ios::binary);
     int numbers[10];
     
-    std::cout << "Исходные числа: ";
+    std::cout << "РСЃС…РѕРґРЅС‹Рµ С‡РёСЃР»Р°: ";
     for (int i = 0; i < 10; i++) {
         numbers[i] = 1 + rand() % 100;
         source_file.write((char*)&numbers[i], sizeof(numbers[i]));
@@ -26,7 +26,7 @@ void FileTasks::zadanie1() {
     source_file.close();
     std::cout << std::endl;
     
-    // Читаем и находим четные
+    // Р§РёС‚Р°РµРј Рё РЅР°С…РѕРґРёРј С‡РµС‚РЅС‹Рµ
     std::ifstream read_file("task1(1).bin", std::ios::binary);
     std::ofstream even_file("task1(2).bin", std::ios::binary);
     
@@ -42,23 +42,23 @@ void FileTasks::zadanie1() {
     read_file.close();
     even_file.close();
     
-    // Выводим результат
-    std::cout << "Четные числа: ";
+    // Р’С‹РІРѕРґРёРј СЂРµР·СѓР»СЊС‚Р°С‚
+    std::cout << "Р§РµС‚РЅС‹Рµ С‡РёСЃР»Р°: ";
     for (int n : even_numbers) {
         std::cout << n << " ";
     }
     std::cout << std::endl;
     
-    std::cout << "Найдено четных чисел: " << even_numbers.size() << std::endl;
-    std::cout << "Файлы созданы: task1(1).bin, task1(2).bin" << std::endl;
+    std::cout << "РќР°Р№РґРµРЅРѕ С‡РµС‚РЅС‹С… С‡РёСЃРµР»: " << even_numbers.size() << std::endl;
+    std::cout << "Р¤Р°Р№Р»С‹ СЃРѕР·РґР°РЅС‹: task1(1).bin, task1(2).bin" << std::endl;
 
     system("chcp 1251");
     setlocale(LC_ALL, "Russian");
 }
 
-// Задание 2
+// Р—Р°РґР°РЅРёРµ 2
 void FileTasks::zadanie2() {
-    std::cout << "\n=== ЗАДАНИЕ 2 ===" << std::endl;
+    std::cout << "\n=== Р—РђР”РђРќРР• 2 ===" << std::endl;
     
     std::ofstream file("task2.bin", std::ios::binary);
     for (int i = 0; i < 8; i++) {
@@ -76,7 +76,7 @@ void FileTasks::zadanie2() {
     }
     in.close();
     
-    // Заполнение матрицы
+    // Р—Р°РїРѕР»РЅРµРЅРёРµ РјР°С‚СЂРёС†С‹
     int matrix[3][3];
     int index = 0;
     for (int i = 0; i < 3; i++) {
@@ -89,7 +89,7 @@ void FileTasks::zadanie2() {
         }
     }
     
-    std::cout << "Исходная матрица:" << std::endl;
+    std::cout << "РСЃС…РѕРґРЅР°СЏ РјР°С‚СЂРёС†Р°:" << std::endl;
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
             std::cout << matrix[i][j] << "\t";
@@ -97,7 +97,7 @@ void FileTasks::zadanie2() {
         std::cout << std::endl;
     }
     
-    // Меняем min и max
+    // РњРµРЅСЏРµРј min Рё max
     for (int i = 0; i < 3; i++) {
         int min_idx = 0, max_idx = 0;
         for (int j = 1; j < 3; j++) {
@@ -109,7 +109,7 @@ void FileTasks::zadanie2() {
         matrix[i][max_idx] = temp;
     }
     
-    std::cout << "\nПосле замены:" << std::endl;
+    std::cout << "\nРџРѕСЃР»Рµ Р·Р°РјРµРЅС‹:" << std::endl;
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
             std::cout << matrix[i][j] << "\t";
@@ -121,34 +121,34 @@ void FileTasks::zadanie2() {
     setlocale(LC_ALL, "Russian");
 }
 
-// Задание 3
+// Р—Р°РґР°РЅРёРµ 3
 void FileTasks::zadanie3() {
-    std::cout << "\n=== ЗАДАНИЕ 3 ===" << std::endl;
+    std::cout << "\n=== Р—РђР”РђРќРР• 3 ===" << std::endl;
     
-    // Файл с багажом 3 пассажиров
+    // Р¤Р°Р№Р» СЃ Р±Р°РіР°Р¶РѕРј 3 РїР°СЃСЃР°Р¶РёСЂРѕРІ
     std::ofstream out("task3.bin", std::ios::binary);
     
-    std::cout << "Исходные данные о багаже:" << std::endl;
+    std::cout << "РСЃС…РѕРґРЅС‹Рµ РґР°РЅРЅС‹Рµ Рѕ Р±Р°РіР°Р¶Рµ:" << std::endl;
     
     for (int p = 0; p < 3; p++) {
-        int items = 2 + rand() % 3; // 2-4 вещи
+        int items = 2 + rand() % 3; // 2-4 РІРµС‰Рё
         out.write((char*)&items, sizeof(int));
         
-        std::cout << "\nПассажир " << p + 1 << " (" << items << " вещей):" << std::endl;
+        std::cout << "\nРџР°СЃСЃР°Р¶РёСЂ " << p + 1 << " (" << items << " РІРµС‰РµР№):" << std::endl;
         
         for (int i = 0; i < items; i++) {
             Baggage item;
-            const char* names[] = {"Чемодан", "Сумка", "Рюкзак", "Коробка"};
+            const char* names[] = {"Р§РµРјРѕРґР°РЅ", "РЎСѓРјРєР°", "Р СЋРєР·Р°Рє", "РљРѕСЂРѕР±РєР°"};
             strcpy(item.name, names[rand() % 4]);
             item.weight = 1.0 + (rand() % 300) / 10.0;
             out.write((char*)&item, sizeof(Baggage));
             
-            std::cout << "  " << item.name << ": " << item.weight << " кг" << std::endl;
+            std::cout << "  " << item.name << ": " << item.weight << " РєРі" << std::endl;
         }
     }
     out.close();
     
-    std::cout << "\nАнализ данных из файла:" << std::endl;
+    std::cout << "\nРђРЅР°Р»РёР· РґР°РЅРЅС‹С… РёР· С„Р°Р№Р»Р°:" << std::endl;
     
     std::ifstream in("task3.bin", std::ios::binary);
     double total_weight = 0;
@@ -177,12 +177,12 @@ void FileTasks::zadanie3() {
     double overall_avg = total_weight / total_items;
     double m = 1.5;
     
-    std::cout << "\nСтатистика:" << std::endl;
-    std::cout << "Общий вес всего багажа: " << total_weight << " кг" << std::endl;
-    std::cout << "Всего единиц багажа: " << total_items << std::endl;
-    std::cout << "Средний вес одной вещи: " << overall_avg << " кг" << std::endl;
-    std::cout << "Допустимое отклонение: +-" << m << " кг" << std::endl;
-    std::cout << "\nПодходящий багаж (пассажиры): ";
+    std::cout << "\nРЎС‚Р°С‚РёСЃС‚РёРєР°:" << std::endl;
+    std::cout << "РћР±С‰РёР№ РІРµСЃ РІСЃРµРіРѕ Р±Р°РіР°Р¶Р°: " << total_weight << " РєРі" << std::endl;
+    std::cout << "Р’СЃРµРіРѕ РµРґРёРЅРёС† Р±Р°РіР°Р¶Р°: " << total_items << std::endl;
+    std::cout << "РЎСЂРµРґРЅРёР№ РІРµСЃ РѕРґРЅРѕР№ РІРµС‰Рё: " << overall_avg << " РєРі" << std::endl;
+    std::cout << "Р”РѕРїСѓСЃС‚РёРјРѕРµ РѕС‚РєР»РѕРЅРµРЅРёРµ: +-" << m << " РєРі" << std::endl;
+    std::cout << "\nРџРѕРґС…РѕРґСЏС‰РёР№ Р±Р°РіР°Р¶ (РїР°СЃСЃР°Р¶РёСЂС‹): ";
     
     bool found = false;
     for (int i = 0; i < avg_weights.size(); i++) {
@@ -192,18 +192,18 @@ void FileTasks::zadanie3() {
         }
     }
     
-    if (!found) std::cout << "нет";
+    if (!found) std::cout << "РЅРµС‚";
     std::cout << std::endl;
 
     system("chcp 1251");
     setlocale(LC_ALL, "Russian");
 }
 
-// Задание 4
+// Р—Р°РґР°РЅРёРµ 4
 void FileTasks::zadanie4() {
-    std::cout << "\n=== ЗАДАНИЕ 4 ===" << std::endl;
+    std::cout << "\n=== Р—РђР”РђРќРР• 4 ===" << std::endl;
     
-    // Текстовый файл с 8 числами
+    // РўРµРєСЃС‚РѕРІС‹Р№ С„Р°Р№Р» СЃ 8 С‡РёСЃР»Р°РјРё
     std::ofstream out("task4.txt");
     for (int i = 0; i < 8; i++) {
         out << (1 + rand() % 100) << std::endl;
@@ -224,19 +224,19 @@ void FileTasks::zadanie4() {
     for (int i = 0; i < 4; i++) sum1 += nums[i];
     for (int i = 4; i < 8; i++) sum2 += nums[i];
     
-    std::cout << "Сумма первой половины: " << sum1 << std::endl;
-    std::cout << "Сумма второй половины: " << sum2 << std::endl;
-    std::cout << "Разность: " << sum1 - sum2 << std::endl;
+    std::cout << "РЎСѓРјРјР° РїРµСЂРІРѕР№ РїРѕР»РѕРІРёРЅС‹: " << sum1 << std::endl;
+    std::cout << "РЎСѓРјРјР° РІС‚РѕСЂРѕР№ РїРѕР»РѕРІРёРЅС‹: " << sum2 << std::endl;
+    std::cout << "Р Р°Р·РЅРѕСЃС‚СЊ: " << sum1 - sum2 << std::endl;
 
     system("chcp 1251");
     setlocale(LC_ALL, "Russian");
 }
 
-// Задание 5
+// Р—Р°РґР°РЅРёРµ 5
 void FileTasks::zadanie5() {
-    std::cout << "\n=== ЗАДАНИЕ 5 ===" << std::endl;
+    std::cout << "\n=== Р—РђР”РђРќРР• 5 ===" << std::endl;
     
-    // Файл с числами в строках
+    // Р¤Р°Р№Р» СЃ С‡РёСЃР»Р°РјРё РІ СЃС‚СЂРѕРєР°С…
     std::ofstream out("task5.txt");
     for (int i = 0; i < 4; i++) {
         int numbers_in_line = 2 + rand() % 3;
@@ -247,7 +247,7 @@ void FileTasks::zadanie5() {
     }
     out.close();
     
-    // Суммируем
+    // РЎСѓРјРјРёСЂСѓРµРј
     std::ifstream in("task5.txt");
     int sum = 0;
     int num = 0;
@@ -257,24 +257,24 @@ void FileTasks::zadanie5() {
     }
     in.close();
     
-    std::cout << "Сумма всех чисел: " << sum << std::endl;
+    std::cout << "РЎСѓРјРјР° РІСЃРµС… С‡РёСЃРµР»: " << sum << std::endl;
 
     system("chcp 1251");
     setlocale(LC_ALL, "Russian");
 }
 
-// Задание 6
+// Р—Р°РґР°РЅРёРµ 6
 void FileTasks::zadanie6() {
-    std::cout << "\n=== ЗАДАНИЕ 6 ===" << std::endl;
+    std::cout << "\n=== Р—РђР”РђРќРР• 6 ===" << std::endl;
     
-    // Файл со строками
+    // Р¤Р°Р№Р» СЃРѕ СЃС‚СЂРѕРєР°РјРё
     std::ofstream out("task6.txt");
     const char* lines[] = {
-        "Короткая строка",
-        "Строка средней длины",
-        "Очень длинная строка с большим количеством символов",
-        "Еще одна",
-        "Ещё длинная строка в этом файле"
+        "РљРѕСЂРѕС‚РєР°СЏ СЃС‚СЂРѕРєР°",
+        "РЎС‚СЂРѕРєР° СЃСЂРµРґРЅРµР№ РґР»РёРЅС‹",
+        "РћС‡РµРЅСЊ РґР»РёРЅРЅР°СЏ СЃС‚СЂРѕРєР° СЃ Р±РѕР»СЊС€РёРј РєРѕР»РёС‡РµСЃС‚РІРѕРј СЃРёРјРІРѕР»РѕРІ",
+        "Р•С‰Рµ РѕРґРЅР°",
+        "Р•С‰С‘ РґР»РёРЅРЅР°СЏ СЃС‚СЂРѕРєР° РІ СЌС‚РѕРј С„Р°Р№Р»Рµ"
     };
     
     for (int i = 0; i < 5; i++) {
@@ -282,7 +282,7 @@ void FileTasks::zadanie6() {
     }
     out.close();
     
-    // Находим самую короткую и длинную
+    // РќР°С…РѕРґРёРј СЃР°РјСѓСЋ РєРѕСЂРѕС‚РєСѓСЋ Рё РґР»РёРЅРЅСѓСЋ
     std::ifstream in("task6.txt");
     std::string line;
     std::string shortest;
@@ -301,11 +301,11 @@ void FileTasks::zadanie6() {
     in.close();
     
     std::ofstream res("task6_result.txt");
-    res << "Самая короткая: " << shortest << std::endl;
-    res << "Самая длинная: " << longest << std::endl;
+    res << "РЎР°РјР°СЏ РєРѕСЂРѕС‚РєР°СЏ: " << shortest << std::endl;
+    res << "РЎР°РјР°СЏ РґР»РёРЅРЅР°СЏ: " << longest << std::endl;
     res.close();
     
-    std::cout << "Созданы файлы: task6.txt, task6_result.txt" << std::endl;
+    std::cout << "РЎРѕР·РґР°РЅС‹ С„Р°Р№Р»С‹: task6.txt, task6_result.txt" << std::endl;
 
     system("chcp 1251");
     setlocale(LC_ALL, "Russian");
