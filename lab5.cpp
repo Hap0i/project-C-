@@ -1,8 +1,8 @@
-#include "lab5.h"
 #include <iostream>
 #include <ctime>
 #include <locale>
 #include <cstdlib>
+#include "lab5.h"
 
 int main() {
     system("chcp 1251");
